@@ -1,0 +1,12 @@
+platform :ios, '13.0'
+
+inhibit_all_warnings!
+
+use_frameworks!
+
+target 'WookieMovies' do
+  pod 'Alamofire'
+  pod 'AlamofireImage'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+end

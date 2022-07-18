@@ -15,9 +15,9 @@ jobs:
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
 
-      # - name: Print user name
-      #   shell: bash
-      #   run: echo "${{ github.event.inputs.name }"
+      - name: Print user name
+        shell: bash
+        run: echo "${{ github.event.inputs }"
       # - name: Print user name
       #   shell: bash
       #   run: echo "${{ github.event.inputs.log }"

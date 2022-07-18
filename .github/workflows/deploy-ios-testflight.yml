@@ -2,19 +2,7 @@
 name: Deploy iOS TestFlight
 
 on:
-  workflow_dispatch:
-    inputs:
-      name:
-        description: 'Who trigger this?'
-        required: true
-      log:
-        description: 'What changes log?'
-        required: false
-        default: ''
-      sync:
-        description: 'Send changes log to AppStore Connect'
-        type: boolean
-        required: false
+  push
 
 jobs:
   deploy:

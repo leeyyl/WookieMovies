@@ -2,24 +2,12 @@
 name: Deploy iOS TestFlight
 
 on:
-  workflow_dispatch:
-    inputs:
-      name:
-        description: 'Who trigger this?'
-        required: true
-      log:
-        description: 'What changes log?'
-        required: false
-        default: ''
-      sync:
-        description: 'Send changes log to AppStore Connect'
-        type: boolean
-        required: false
+  workflow_dispatch: {}
 
 jobs:
   deploy:
-    name: ${{ github.event.inputs.name }} deploy iOS TestFlight
-    runs-on: [macOS, testflight]
+    name: deploy iOS TestFlight
+    runs-on: ubuntu-latest
 
     steps:
       - name: Extract branch name
@@ -27,9 +15,9 @@ jobs:
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
 
-      # - name: Print user name
-      #   shell: bash
-      #   run: echo "${{ github.event.inputs.name }"
-      # - name: Print user name
-      #   shell: bash
-      #   run: echo "${{ github.event.inputs.log }"
+      - name: Print user name
+        shell: bash
+        run: echo "${{ github.event.ref }}"
+      - name: Print user name
+        shell: bash
+        run: echo "${{ github.event.inputs }}"

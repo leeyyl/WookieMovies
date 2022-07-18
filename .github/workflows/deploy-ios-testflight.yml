@@ -17,7 +17,7 @@ jobs:
 
       - name: Print user name
         shell: bash
-        run: echo "${{ github.event.ref }"
-      # - name: Print user name
-      #   shell: bash
-      #   run: echo "${{ github.event.inputs.log }"
+        run: echo "${{ github.event.ref }}"
+      - name: Print user name
+        shell: bash
+        run: echo "${{ github.event.inputs }}"

@@ -2,7 +2,8 @@
 name: Deploy iOS TestFlight
 
 on:
-  push
+  repository_dispatch:
+    types: [BuildUniqueTitle]
 
 jobs:
   deploy:
